@@ -51,8 +51,13 @@ const Home = () => {
                                             <div class="card shadow-none my-2" style={{ width: 250 }}>
                                                 <img src={`https://public.lazybluffer.online/${item.nfile}`} class="card-img-top max-height" alt={item.title} />
                                                 <div class="card-body">
-                                                    <h5 class="card-title">Card title</h5>
-                                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                    <h5 class="card-title">
+                                                        {item.title.length > 50 ? `${item.title.substring(0, 50)}...` : item.title}
+
+                                                    </h5>
+                                                    <p class="card-text">
+                                                    {item.desc.length > 100 ? `${item.title.substring(0, 100)}...` : item.title}
+                                                    </p>
                                                     <Link to={`/news/${item.slug}`} class="link text-dark">Go somewhere</Link>
                                                 </div>
                                             </div>
