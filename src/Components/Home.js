@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../App.css'
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
     const [data, setData] = useState([]);
@@ -29,7 +30,12 @@ const Home = () => {
         fetchData();
     }, []);
     return (
+
         <div className='container mt-5 '>
+            <Helmet>
+                <title>Vista</title>
+                (<meta name="description" content="vista news" />)
+            </Helmet>
             <div className='row h-100vh'>
                 <div className='col-9 bg-danger '>
                     <div>
