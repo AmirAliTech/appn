@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import SearchInput from '../Components/Form/SearchInput'
 
 const Header = () => {
   return (
@@ -13,16 +14,34 @@ const Header = () => {
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <Link class="nav-link active" aria-current="page" to="/">Home</Link>
+                <Link class="nav-link active"  to="/">Home</Link>
               </li>
               <li class="nav-item">
-                <Link class="nav-link" to="">Link</Link>
+                <Link class="nav-link" to="/sports">Sports</Link>
+              </li>
+              <li class="nav-item">
+                <Link class="nav-link" to="/technology">Technology</Link>
+              </li>
+              <li class="nav-item">
+                <Link class="nav-link" to="/health">Health</Link>
+              </li>
+              <li class="nav-item">
+                <Link class="nav-link" to="/economy">Economy</Link>
+              </li>
+              <li class="nav-item">
+                <Link class="nav-link" to="/asia">Asia</Link>
+              </li>
+              <li class="nav-item">
+                <Link class="nav-link" to="/africa">Africa</Link>
+              </li>
+              <li class="nav-item">
+                <Link class="nav-link" to="/europe">Europe</Link>
+              </li>
+              <li class="nav-item">
+                <Link class="nav-link" to="/america">America</Link>
               </li>
             </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            <SearchInput/>
           </div>
         </div>
       </nav>

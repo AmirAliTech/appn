@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import '../App.css';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 
-const Home = () => {
+const Asia = () => {
     const [data, setData] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -11,7 +10,7 @@ const Home = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("https://public.lazybluffer.online/findtrend", {
+                const response = await fetch("https://public.lazybluffer.online/asia", {
                     method: "GET",
                 });
                 if (!response.ok) {
@@ -29,11 +28,10 @@ const Home = () => {
 
         fetchData();
     }, []);
-
     return (
         <div className='container mt-5'>
             <Helmet>
-                <title>Vista</title>
+                <title>Sports</title>
                 <meta name="description" content="vista news" />
             </Helmet>
             <div className='row h-100vh'>
@@ -73,7 +71,7 @@ const Home = () => {
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default Home;
+export default Asia

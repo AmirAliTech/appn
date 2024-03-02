@@ -58,7 +58,7 @@ const NewsDetail = () => {
     }, [data]);
 
     return (
-        <div>
+        <>
             {data && (
                 <Helmet>
                     <title>{data.title}</title>
@@ -87,15 +87,22 @@ const NewsDetail = () => {
                                         </div>
                                         <div className="col-3 bg-smoke border border-1 rounded-2 h-100vh py-3 ">
                                             {related.map((rn) => (
-                                                <div className='d-flex justify-content-center flex-column align-items-center border border-1 bg-white px-3 py-2 rounded-3 overflow-hidden ' key={rn._id}>
-                                                    <img src={`https://public.lazybluffer.online/${rn.nfile}`} width="80%"   alt="" />
-                                                    <h4 className='w-100'>{rn.title}</h4>
-                                                    <p className='w-100'>{rn.desc}</p>
-                                                    <span className='w-100'><Link className='link' to={`/news/${rn.slug}`}>View more</Link></span>
+                                                <div className='' key={rn._id}>
+                                                    <div className="shadow-none my-2 card-background h-200px h-min-200px rounded-3 overflow-hidden " style={{ backgroundImage: `url("https://public.lazybluffer.online/${rn.nfile.replace('uploads', 'uploads/')}")` }}>
+                                                        <div className="bg-black-opacity h-200px h-min-200px d-flex justify-content-end align-items-start flex-column px-2 py-2">
+                                                            <h5>
+                                                                {rn.title.length > 30 ? `${rn.title.substring(0, 30)}...` : rn.title}
+                                                            </h5>
+                                                            <p>
+                                                                {rn.desc.length > 50 ? `${rn.desc.substring(0, 50)}...` : rn.desc}
+                                                            </p>
+                                                            <Link to={`/news/${rn.slug}`} className="link card-link">Go somewhere</Link>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             ))}
-                                        </div>
 
+                                        </div>
                                     </div>
                                 </div>
                             )}
@@ -103,7 +110,7 @@ const NewsDetail = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

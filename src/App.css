@@ -5,11 +5,23 @@
   min-height: 100vh !important;
 }
 .h-200px{
-  height: 200px;
+  max-height: 200px;
+}
+.h-min-200px{
+  min-height: 200px;
 }
 .bg-black-opacity{
   background-color: rgba(0, 0, 0, 0.459);
+  color: white;
+}
+.card-link{
+  color: white;
 }
 .bg-smoke{
   background-color: whitesmoke;
+}
+.card-background {
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
 }
