@@ -2,7 +2,7 @@ import React from "react";
 import { useSearch } from "../Context/Search";
 import { Link } from "react-router-dom";
 const SearchFind = () => {
-    const [values, setValues] = useSearch();
+    const [values] = useSearch();
     return (
         <div className="container">
             <div className="text-center">
